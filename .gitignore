@@ -1,0 +1,6 @@
+**/*.csproj
+**/*.pdb
+**/bin/
+**/obj/
+.vs
+.git
