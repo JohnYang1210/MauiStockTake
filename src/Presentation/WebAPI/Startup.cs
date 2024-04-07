@@ -39,6 +39,8 @@ public class Startup
             options.Filters.Add<ApiExceptionFilterAttribute>())
                 .AddFluentValidation(x => x.AutomaticValidationEnabled = false);
 
+
+
         services.AddRazorPages();
 
         // Customise default API behaviour
