@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiStockTake.UI.Pages.InputPage"
-             Title="InputPage">
+             x:Class="MauiStockTake.UI.Pages.ProductPage"
+             Title="ProductPage">
     <VerticalStackLayout>
         <Label 
-            Text="Input Page"
+            Text="{Binding ProductName}"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        <Button Text="Go to product"
-                WidthRequest="100"
-                Clicked="Button_Clicked"/>
+        <Label Text="{Binding ManufactureName}"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
     </VerticalStackLayout>
 </ContentPage>

@@ -8,6 +8,7 @@ namespace MauiStockTake.UI
         {
             InitializeComponent();
             Routing.RegisterRoute("login", typeof(LoginPage));
+            Routing.RegisterRoute("productdetails", typeof(ProductPage));
         }
     }
 }
