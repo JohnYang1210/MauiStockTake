@@ -6,17 +6,59 @@
     xmlns:local="clr-namespace:MauiStockTake.UI"
     xmlns:pages="clr-namespace:MauiStockTake.UI.Pages"
     Shell.FlyoutBehavior="Disabled"
-    Title="MauiStockTake.UI">
+    Title="MauiStockTake.UI"
+    FlyoutBehavior="Flyout"
+    >
 
+    <!--<Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions="0.8*,0.8*">
+                <Image Source="{Binding Icon}"
+                       Margin="55,0,0,0"
+                       HeightRequest="45"/>
+                <Label Grid.Column="1"
+                       Text="{Binding Text}"
+                       Margin="10,0,0,0"
+                       VerticalTextAlignment="Center"/>
+            </Grid>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>-->
+    <Shell.FlyoutHeader>
+        <Grid RowDefinitions="20,*,*"
+              >
+            <Image Grid.Row="1"
+                   Source="surfshack_logo.jpeg"
+                   WidthRequest="100"
+                   HeightRequest="100"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center">
+                <Image.Clip>
+                    <EllipseGeometry Center="50,50"
+                                     RadiusX="50"
+                                     RadiusY="50"/>
+                </Image.Clip>
+            </Image>
+            <Label Grid.Row="2"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Text="MauiStockTake"/>
+        </Grid>
+    </Shell.FlyoutHeader>
     <TabBar>
         <Tab Title="Input"
-             Icon="icon_input.svg">
+             Icon="icon_input.svg"
+             Route="input"
+             >
             <ShellContent ContentTemplate="{DataTemplate pages:InputPage}"/>
         </Tab>
         <Tab Title="Reports"
-             Icon="icon_report.svg">
+             Icon="icon_report.svg"
+             Route="reports"
+             >
             <ShellContent ContentTemplate="{DataTemplate pages:ReportPage}"/>
         </Tab>
     </TabBar>
 
+    <MenuItem Text="Logout"
+              IconImageSource="icon_logout.svg"/>
 </Shell>
