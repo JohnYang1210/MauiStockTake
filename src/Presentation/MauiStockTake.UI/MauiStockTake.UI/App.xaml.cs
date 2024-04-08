@@ -1,4 +1,6 @@
-﻿namespace MauiStockTake.UI
+﻿using MauiStockTake.UI.Pages;
+
+namespace MauiStockTake.UI
 {
     public partial class App : Application
     {
@@ -7,6 +9,11 @@
             InitializeComponent();
 
             MainPage = new AppShell();
+        }
+        protected override async void OnStart()
+        {
+            base.OnStart();
+            await MainPage.Navigation.PushModalAsync(new LoginPage());
         }
     }
 }
