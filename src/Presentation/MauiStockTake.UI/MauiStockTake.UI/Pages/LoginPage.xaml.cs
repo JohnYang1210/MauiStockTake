@@ -8,7 +8,7 @@ public partial class LoginPage : ContentPage
 	public LoginPage()
 	{
 		InitializeComponent();
-		_authService = new MockAuthService();
+		_authService = new AuthService();
 	}
 
     private async void Button_Clicked(object sender, EventArgs e)
