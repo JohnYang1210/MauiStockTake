@@ -14,5 +14,6 @@ namespace MauiStockTake.UI
         public const string ClientId = "com.mildredsurf.stocktake";
         //Attention!!!Should be WebAPIAPI here...
         public const string Scope = "openid profile offline_access MauiStockTake.WebAPIAPI";
+
     }
 }
