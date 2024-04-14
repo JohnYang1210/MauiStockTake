@@ -1,4 +1,5 @@
-using MauiStockTake.UI.Models;
+
+using MauiStockTake.Shared.Products;
 
 namespace MauiStockTake.UI.Pages;
 
@@ -25,15 +26,15 @@ public partial class ProductPage : ContentPage
 			OnPropertyChanged();
 		}
 	}
-	Product _product;
-	public Product Product
+	ProductDto _product;
+	public ProductDto Product
 	{
 		get => _product;
 		set
 		{
 			_product = value;
 			ProductName=_product.Name;
-			ManufactureName = _product.ManufactureName;
+            ManufactureName = _product.ManufacturerName;
 		}
 	}
 	public ProductPage()

@@ -1,4 +1,5 @@
-using MauiStockTake.UI.Models;
+
+using MauiStockTake.Shared.Products;
 
 namespace MauiStockTake.UI.Pages;
 
@@ -11,10 +12,10 @@ public partial class InputPage : ContentPage
 
     private async void Button_Clicked(object sender, EventArgs e)
     {
-		var product = new Product
-		{
+		var product = new ProductDto
+        {
 			Name="MauiStockTake",
-			ManufactureName="JohnYangBytes"
+			ManufacturerName="JohnYangBytes"
 		};
 		var pageParams = new Dictionary<string, object>
 		{
