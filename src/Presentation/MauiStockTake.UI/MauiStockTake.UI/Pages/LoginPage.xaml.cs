@@ -5,10 +5,10 @@ namespace MauiStockTake.UI.Pages;
 public partial class LoginPage : ContentPage
 {
 	private readonly IAuthService _authService;
-	public LoginPage()
+	public LoginPage(IAuthService authService)
 	{
 		InitializeComponent();
-		_authService = new AuthService();
+		_authService = authService;
 	}
 
     private async void Button_Clicked(object sender, EventArgs e)

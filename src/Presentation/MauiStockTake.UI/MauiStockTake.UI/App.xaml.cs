@@ -1,4 +1,5 @@
-﻿using MauiStockTake.UI.Pages;
+﻿using Maui.Plugins.PageResolver;
+using MauiStockTake.UI.Pages;
 
 namespace MauiStockTake.UI
 {
@@ -13,7 +14,7 @@ namespace MauiStockTake.UI
         protected override async void OnStart()
         {
             base.OnStart();
-            await MainPage.Navigation.PushModalAsync(new LoginPage());
+            await MainPage.Navigation.PushModalAsync<LoginPage>();
         }
     }
 }

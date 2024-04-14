@@ -6,13 +6,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using IBrowser = IdentityModel.OidcClient.Browser.IBrowser;
 namespace MauiStockTake.UI.Services
 {
     public class AuthService : IAuthService
     {
         private readonly OidcClientOptions _options;
-        public AuthService()
+        public AuthService(IBrowser browser)
         {
             _options = new OidcClientOptions
             {
@@ -20,13 +20,13 @@ namespace MauiStockTake.UI.Services
                 ClientId=Constants.ClientId,
                 Scope=Constants.Scope,
                 RedirectUri=Constants.RedirectUri,
-                Browser=new AuthBrowser()
+                Browser=browser
             };
         }
         async Task<bool> IAuthService.LoginAsync()
         {
             var oidClient = new OidcClient(_options);
-            var loginResult = await oidClient.LoginAsync(new LoginRequest());
+            LoginResult loginResult = await oidClient.LoginAsync(new LoginRequest());
             if (loginResult.IsError)
             {
                 //TODO:inspect and handle error

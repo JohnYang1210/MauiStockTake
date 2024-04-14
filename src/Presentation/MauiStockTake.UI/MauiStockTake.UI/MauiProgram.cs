@@ -1,5 +1,9 @@
-﻿using Microsoft.Extensions.Logging;
-
+﻿using Maui.Plugins.PageResolver;
+using MauiStockTake.UI.Helpers;
+using MauiStockTake.UI.Pages;
+using MauiStockTake.UI.Services;
+using Microsoft.Extensions.Logging;
+using IBrowser = IdentityModel.OidcClient.Browser.IBrowser;
 namespace MauiStockTake.UI
 {
     public static class MauiProgram
@@ -13,7 +17,10 @@ namespace MauiStockTake.UI
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });
+                }).UsePageResolver();
+            builder.Services.AddSingleton<IBrowser, AuthBrowser>();
+            builder.Services.AddSingleton<IAuthService,AuthService>();
+            builder.Services.AddTransient<LoginPage>();
 
 #if DEBUG
     		builder.Logging.AddDebug();
