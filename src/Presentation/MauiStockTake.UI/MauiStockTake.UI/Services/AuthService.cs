@@ -1,4 +1,6 @@
 ﻿using IdentityModel.OidcClient;
+using MauiStockTake.Client.Authentication;
+
 //using Java.Nio.Channels;
 using MauiStockTake.UI.Helpers;
 using System;
@@ -32,6 +34,7 @@ namespace MauiStockTake.UI.Services
                 //TODO:inspect and handle error
                 return false;
             }
+            AuthHandler.AuthToken = loginResult.AccessToken;
             return true;
         }
     }

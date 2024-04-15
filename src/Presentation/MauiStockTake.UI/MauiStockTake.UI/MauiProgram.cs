@@ -1,4 +1,5 @@
 ﻿using Maui.Plugins.PageResolver;
+using MauiStockTake.Client.Authentication;
 using MauiStockTake.UI.Helpers;
 using MauiStockTake.UI.Pages;
 using MauiStockTake.UI.Services;
@@ -21,6 +22,9 @@ namespace MauiStockTake.UI
             builder.Services.AddSingleton<IBrowser, AuthBrowser>();
             builder.Services.AddSingleton<IAuthService,AuthService>();
             builder.Services.AddTransient<LoginPage>();
+            builder.Services.AddSingleton<AuthHandler>();
+            builder.Services.AddHttpClient(AuthHandler.AUTHENTICATED_CLIENT).
+                AddHttpMessageHandler(s=>s.GetRequiredService<AuthHandler>());
 
 #if DEBUG
     		builder.Logging.AddDebug();
